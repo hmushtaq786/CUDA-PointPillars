@@ -1,5 +1,5 @@
 DATASET: 'KittiDataset'
-DATA_PATH: '../data/kitti'
+DATA_PATH: '../../data/kitti_new'
 
 POINT_CLOUD_RANGE: [0, -40, -3, 70.4, 40, 1]
 
@@ -13,14 +13,14 @@ INFO_PATH: {
     'test': [kitti_infos_val.pkl],
 }
 
-GET_ITEM_LIST: ["points"]
+GET_ITEM_LIST: ["points", "gt_boxes"]
 FOV_POINTS_ONLY: True
 
 DATA_AUGMENTOR:
     DISABLE_AUG_LIST: ['placeholder']
     AUG_CONFIG_LIST:
         - NAME: gt_sampling
-          USE_ROAD_PLANE: True
+          USE_ROAD_PLANE: False
           DB_INFO_PATH:
               - kitti_dbinfos_train.pkl
           PREPARE: {
