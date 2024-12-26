@@ -16,13 +16,13 @@ We provide a [Dockerfile](docker/Dockerfile) to ease environment setup. Please e
 ```
 cd docker && docker build . -t pointpillar-new
 ```
-We can then run the docker with the following command: 
-```
-docker run --rm -ti --gpus all -v "%cd%":/home/working_dir --net=host pointpillar-new:latest
-```
 Come back to the root directory:
 ```
 cd ..
+```
+We can then run the docker with the following command: 
+```
+docker run --rm -ti --gpus all -v "%cd%":/home/working_dir --net=host pointpillar-new:latest
 ```
 Navigate to the respective directory within our docker image:
 ```
