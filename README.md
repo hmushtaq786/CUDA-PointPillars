@@ -20,6 +20,10 @@ We can then run the docker with the following command:
 ```
 docker run --rm -ti --gpus all -v %cd%:/home/working_dir --net=host pointpillar-new:latest
 ```
+Navigate to the respective directory within our docker image:
+```
+cd home/working_dir
+```
 For model exporting, please run the following command to clone pcdet repo and install custom CUDA extensions:
 ```
 git clone https://github.com/open-mmlab/OpenPCDet.git
