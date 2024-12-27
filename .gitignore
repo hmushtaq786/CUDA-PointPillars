@@ -1,6 +1,5 @@
 .vscode
 build
-ckpts
 data
 model/pointpillar_raw.onnx
 model/*.plan
