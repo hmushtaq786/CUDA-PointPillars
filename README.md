@@ -8,9 +8,7 @@ Overall inference has below phases:
 - Run TensorRT engine to get detection feature
 - Parse detection feature and apply NMS
 
-## Prerequisites
-
-### Prepare Model && Data
+## Prepare Model && Data
 
 We provide a [Dockerfile](docker/Dockerfile) to ease environment setup. Please execute the following command to build the docker image after nvidia-docker installation:
 ```
