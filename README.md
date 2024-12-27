@@ -14,11 +14,19 @@ Overall inference has below phases:
 
 We provide a [Dockerfile](docker/Dockerfile) to ease environment setup. Please execute the following command to build the docker image after nvidia-docker installation:
 ```
-cd docker && docker build . -t pointpillar
+cd docker && docker build . -t pointpillar-new
+```
+Come back to the root directory:
+```
+cd ..
 ```
 We can then run the docker with the following command: 
 ```
-nvidia-docker run --rm -ti -v /home/$USER/:/home/$USER/ --net=host --rm pointpillar:latest
+docker run --rm -ti --gpus all -v "%cd%":/home/working_dir --net=host pointpillar-new:latest
+```
+Navigate to the respective directory within our docker image:
+```
+cd home/working_dir
 ```
 For model exporting, please run the following command to clone pcdet repo and install custom CUDA extensions:
 ```
