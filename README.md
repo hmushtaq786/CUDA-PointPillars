@@ -37,13 +37,12 @@ Create config files for the kitti dataset while in OpenPCDet directory:
 ```
 python3 -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos ../cfgs/dataset_configs/kitti_dataset.yaml --data_path ../data/kitti_new
 ```
+Go back to the root directory within docker (./home/working_dir)
 ```
-Download [PTM](https://drive.google.com/file/d/1wMxWTpU1qUoY3DsCH31WJmvJxcjFXKlm/view) to ckpts/, then use below command to export ONNX model:
+cd ..
 ```
-python3 tool/export_onnx.py --ckpt ckpts/pointpillar_7728.pth --out_dir model
+Use below command to train ONNX model to given kitti dataset using the checkpoint in ./ckpts:
 ```
-Use below command to evaluate on kitti dataset, follow [Evaluation on Kitti](tool/eval/README.md) to get more detail for dataset preparation.
-```
-sh tool/evaluate_kitti_val.sh
+python3 tool/train_model.py --cfg_file cfgs/kitti_models/pointpillar.yaml --data_path ./data/kitti_new --ckpt ./ckpts/pointpillar_7728.pth --out_dir ./output --epochs 10 --batch_size 4
 ```
 
