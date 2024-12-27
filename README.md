@@ -30,7 +30,7 @@ cd home/working_dir
 ```
 For model exporting, please run the following command to clone pcdet repo and install custom CUDA extensions:
 ```
-git clone https://github.com/open-mmlab/OpenPCDet.git
+git clone [https://github.com/open-mmlab/OpenPCDet.git](https://github.com/hmushtaq786/OpenPCDet.git)
 cd OpenPCDet && git checkout pointpillar-fix && python3 setup.py develop
 ```
 Create config files for the kitti dataset while in OpenPCDet directory:
