@@ -9,8 +9,17 @@ Overall inference has below phases:
 - Parse detection feature and apply NMS
 
 ## Prepare Model && Data
+Prepare the data using (https://github.com/hmushtaq786/DAIR-V2X) to format it into kitti format and copy it to: .data/kitti_new.
+After copying, it should look like this:
+<pre>
+data/
+	├── kitti_new/
+		├── ImageSets/
+		├── label/
+		├── training/
+</pre>
 
-We provide a [Dockerfile](docker/Dockerfile) to ease environment setup. Please execute the following command to build the docker image after nvidia-docker installation:
+A [Dockerfile](docker/Dockerfile) is provided to ease environment setup. Please execute the following command to build the docker image after docker installation:
 ```
 cd docker && docker build . -t pointpillar-new
 ```
